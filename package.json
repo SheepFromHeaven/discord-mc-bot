@@ -17,10 +17,10 @@
   },
   "homepage": "https://github.com/SheepFromHeaven/discord-mc-bot#readme",
   "dependencies": {
-    "discord.js": "^11.2.1"
+    "discord.js": "^11.2.1",
+    "ramda": "^0.25.0"
   },
   "devDependencies": {
-    "nodemon": "^1.12.1",
-    "ramda": "^0.25.0"
+    "nodemon": "^1.12.1"
   }
 }
