@@ -1,7 +1,7 @@
 const { match, allPass, pipe, toLower, flip, gt, length, curry } = require('ramda');
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const { spawn } = require('child_process');
+const { execFile } = require('child_process');
 const config = require('./config.js');
 
 const isValidUserMessage = require('./validateMessage.js');
@@ -25,6 +25,10 @@ client.on('message', message => {
 
       shScript.stdout.on('data', (data) => {
         send(`${data}`);
+      });
+
+      shScript.stderr.on('data', (data) => {
+        console.log("Process quit with error : " + data);
       });
 
       shScript.on('error', (error) => {
