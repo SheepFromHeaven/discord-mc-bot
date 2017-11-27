@@ -1,3 +1,7 @@
 module.exports = {
-  channel: 'bot-test'
+  restrictChannels: true,
+  allowedChannels: [
+    'interesting-stuff',
+    'bot-test'
+  ]
 };

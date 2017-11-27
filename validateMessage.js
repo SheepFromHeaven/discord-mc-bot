@@ -1,4 +1,4 @@
-const { allPass, not, pipe, curry } = require('ramda');
+const { allPass, not, pipe, curry, contains, flip, prop, or } = require('ramda');
 const config = require('./config.js');
 
 const isByUser = curry((userId, msg) => {
@@ -6,7 +6,18 @@ const isByUser = curry((userId, msg) => {
 });
 const isNotByUser = (userId) => pipe(isByUser(userId), not);
 
-const isInValidChannel = (msg) => msg.channel.name === config.channel;
+
+const isInChannelList = flip(contains)(config.allowedChannels);
+const channelsNotRestricted = !config.restrictChannels;
+const wasSentInAllowedChannel = pipe(
+  prop('channel'),
+  prop('name'),
+  isInChannelList
+);
+const isInValidChannel = pipe(
+  wasSentInAllowedChannel,
+  or(channelsNotRestricted)
+);
 
 const isValidUserMessage = curry((selfId, msg) => allPass([
   isNotByUser(selfId),
