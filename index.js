@@ -27,8 +27,12 @@ client.on('message', message => {
         send(`${data}`);
       });
 
-      shScript.on('exit', (code) => {
-        console.log("Process quit with code : " + code);
+      shScript.on('error', (error) => {
+        console.log("Process quit with error : " + error.message);
+      });
+
+      shScript.on('exit', (code, signal) => {
+        console.log("Process quit with code : " + code + ' ' + signal);
       });
     }
   }
