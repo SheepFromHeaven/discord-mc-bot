@@ -38,6 +38,8 @@ client.on('message', message => {
       shScript.on('exit', (code, signal) => {
         console.log("Process quit with code : " + code + ' ' + signal);
       });
+
+      waitingForTime = false;
     }
   }
 });
