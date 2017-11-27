@@ -6,5 +6,5 @@ ARGS.add_argument('-d', '--duration', default=120, type=int)
 args = vars(ARGS.parse_args())
 duration = args['duration']
 
-print('You asked for a server for ' + duration + ' minutes')
+print('You asked for a server for ' + str(duration) + ' minutes')
 stdout.flush()
