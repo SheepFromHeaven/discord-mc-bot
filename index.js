@@ -1,7 +1,7 @@
 const { match, allPass, pipe, toLower, flip, gt, length, curry } = require('ramda');
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const { execFile } = require('child_process');
+const { spawn } = require('child_process');
 const config = require('./config.js');
 
 const isValidUserMessage = require('./validateMessage.js');
