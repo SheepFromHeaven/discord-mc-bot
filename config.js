@@ -3,5 +3,6 @@ module.exports = {
   allowedChannels: [
     'interesting-stuff',
     'bot-test'
-  ]
+  ],
+  python: 'python'
 };

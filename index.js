@@ -2,6 +2,7 @@ const { match, allPass, pipe, toLower, flip, gt, length, curry } = require('ramd
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const { spawn } = require('child_process');
+const config = require('./config.js');
 
 const isValidUserMessage = require('./validateMessage.js');
 
@@ -20,7 +21,7 @@ client.on('message', message => {
       send('Wie viele Minuten möchtest du spielen?');
     } else if(waitingForTime) {
       const minutes = parseNumber(message.content);
-      const shScript = spawn('python', ['test.py', '-t', minutes]);
+      const shScript = spawn(config.python, ['test.py', '-d', minutes]);
 
       shScript.stdout.on('data', (data) => {
         send(`${data}`);

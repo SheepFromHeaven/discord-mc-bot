@@ -1,12 +1,13 @@
-import argparse, sys, time
+import sys
+import time
+from argparse import ArgumentParser
 
-parser=argparse.ArgumentParser()
+ARGS = ArgumentParser()
+ARGS.add_argument('-d', '--duration', default=120, type=int)
+args = vars(ARGS.parse_args())
+duration = args['duration']
 
-parser.add_argument('-t', help='Do the time option')
-
-args=parser.parse_args()
-
-print vars(args)['t']
+print duration
 sys.stdout.flush()
 
 time.sleep(5)
