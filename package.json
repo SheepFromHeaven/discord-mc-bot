@@ -1,0 +1,26 @@
+{
+  "name": "discord-mc-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SheepFromHeaven/discord-mc-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SheepFromHeaven/discord-mc-bot/issues"
+  },
+  "homepage": "https://github.com/SheepFromHeaven/discord-mc-bot#readme",
+  "dependencies": {
+    "discord.js": "^11.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1",
+    "ramda": "^0.25.0"
+  }
+}
